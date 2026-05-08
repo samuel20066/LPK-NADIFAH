@@ -1,0 +1,77 @@
+# PROGRAM RUMUS KIMIA DASAR
+
+print("=== PROGRAM PERHITUNGAN KIMIA DASAR ===")
+print("1. Normalitas")
+print("2. Molaritas")
+print("3. Berat Ekivalen (BE)")
+print("4. Berat Molekul (BM)")
+print("5. Konversi Suhu")
+print("6. ppm")
+
+pilihan = int(input("Masukkan pilihan (1-6): "))
+
+# 1. NORMALITAS
+if pilihan == 1:
+    print("=== MENGHITUNG NORMALITAS ===")
+    M = float(input("Masukkan molaritas: "))
+    valensi = float(input("Masukkan valensi: "))
+
+    N = M * valensi
+
+    print("Normalitas =", N, "N")
+
+# 2. MOLARITAS
+elif pilihan == 2:
+    print("=== MENGHITUNG MOLARITAS ===")
+    massa = float(input("Masukkan massa zat (gram): "))
+    BM = float(input("Masukkan BM: "))
+    volume = float(input("Masukkan volume larutan (L): "))
+
+    M = massa / (BM * volume)
+
+    print("Molaritas =", M, "M")
+
+# 3. BERAT EKIVALEN
+elif pilihan == 3:
+    print("=== MENGHITUNG BERAT EKIVALEN ===")
+    BM = float(input("Masukkan BM: "))
+    valensi = float(input("Masukkan valensi: "))
+
+    BE = BM / valensi
+
+    print("Berat Ekivalen =", BE)
+
+# 4. BERAT MOLEKUL
+elif pilihan == 4:
+    print("=== MENGHITUNG BERAT MOLEKUL ===")
+    jumlah_unsur = int(input("Masukkan jumlah unsur: "))
+
+    total = 0
+
+    for i in range(jumlah_unsur):
+        ar = float(input("Masukkan Ar unsur: "))
+        indeks = int(input("Masukkan jumlah atom: "))
+
+        total += ar * indeks
+
+    print("BM =", total)
+
+# 5. KONVERSI SUHU
+elif pilihan == 5:
+    print("=== KONVERSI SUHU ===")
+    print("1. Celcius ke Kelvin")
+    print("2. Kelvin ke Celcius")
+    print("3. Celcius ke Fahrenheit")
+    print("4. Fahrenheit ke Celcius")
+
+    suhu_pilihan = int(input("Pilih konversi: "))
+
+    if suhu_pilihan == 1:
+        c = float(input("Masukkan suhu Celcius: "))
+        k = c + 273
+        print("Kelvin =", k, "K")
+
+    elif suhu_pilihan == 2:
+        k = float(input("Masukkan suhu Kelvin: "))
+        c = k - 273
+    print("Pilihan tidak tersedia")
